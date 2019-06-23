@@ -1,0 +1,89 @@
+#menu {
+    font-weight: bold;
+    color: white;
+    background-color: #00ad5f;
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    width: 100%;
+}
+#LogOutlbl  
+{
+    font-size: 16px;
+    position: relative;
+    left: -15%;
+    
+}
+#LogOutbut  
+{
+    font-size: 16px;
+    position: relative;
+    left: -10%;
+    visibility: hidden;
+}
+#menu ul {
+    position: relative;
+    left: 20%;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+    height: auto;
+}
+
+#menu li {
+    position: relative;
+    display: inline;
+    padding: 40px;
+}
+
+#menu a {
+    position: relative;
+    color: #FFF;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background-color: #69d3a3;
+    color: #FFF;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+#menu li .active {
+    background-color: #69d3a3;
+    color: #FFF;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+#MenuFavorite , #MenuHome
+{
+    visibility: hidden;
+}
+
+.notification {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  top: -15px;
+  right: -10px;
+  padding: 3px 7px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+

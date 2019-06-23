@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Source+Sans+Pro:200,300,400,600');
+   
+
+    h1 { color: black; 
+        font-family: 'Lobster', cursive; 
+        font-size: 48px; 
+        font-weight: bold; 
+        line-height: 48px; 
+        margin: 0 0 18px; 
+        text-shadow: 1px 0 0 #fff;
+        position: absolute;
+        top: 18%;
+        left: 42%;
+     }
+
+     .head {
+      background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=);
+      background-repeat: repeat-x;
+      background-position: left;
+      text-align: center;
+    }
+    .head h3 {
+      background-color: #ffffff;
+      margin: 0 auto;
+      padding:10px 10px;
+      display: inline-block;
+      font-family: 'Lobster', cursive;
+      font-weight: bold;
+    }
+    
+
+.image
+{
+padding-right: 20px;
+padding-left: 30px;
+position: relative;
+width: 210px;
+align-content: center;
+float: left;
+}
+.imageFavorite
+{
+  padding-right: 20px;
+  padding-left: 30px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  align-content: center;
+  
+  float: left;
+}
+
+.content
+{
+   margin-top: 200px;
+  
+}
+
+select 
+{
+  position:absolute;
+  top:32% ;
+  width: 150px;
+  height: 30px;
+  left:50% ;
+  box-sizing:border-box;
+  border-radius:.5em;
+
+}
+
+label
+{
+  font-size: 24px;
+  position:absolute;
+  top:32% ;
+  width: 150px;
+  height: 30px;
+  left:35% ;
+  box-sizing:border-box;
+  border-radius:.5em;
+
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+*, *:before, *:after{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lobster', cursive; 
+}
+
+div.images {
+  margin: 5px;
+  border: 1px solid #ddd;
+  float: left;
+  width: 250px;
+  -moz-box-shadow: 2px 2px 3px 0px #aaa;
+  -webkit-box-shadow: 2px 2px 3px 0px #aaa;
+  -o-box-shadow: 2px 2px 3px 0px #aaa;
+  box-shadow: 2px 2px 3px 0px #aaa;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#aaa, Direction=134, Strength=3);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  position: relative;
+}
+
+div.images:hover{
+-moz-box-shadow: 2px 2px 3px 0px #999;
+-webkit-box-shadow: 2px 2px 3px 0px #999;
+-o-box-shadow: 2px 2px 3px 0px #999;
+box-shadow: 2px 2px 3px 0px #999;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#999, Direction=134, Strength=3);
+}
+
+div.images:hover .description{
+  color: #2d2d2d;
+}
+
+.image1{
+width: 50px;
+height: 50px;
+left: 35%;
+position: relative;
+}
+div.images img {
+  padding: 5px;
+  position: relative;
+}
+p.description {
+  color: #777;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.modal-block{ 
+  position: relative;
+  float: left;
+  width: 400px;
+  height: 300px;
+
+}
+
+.modal-name
+{
+font-family: 'Lobster', cursive;
+font-size: 30px;
+line-height: 1.1;
+color: black;
+position: relative;
+}
+
+.modal-information{
+  line-height: 1.5;
+  font-size: 15px;
+  color: #000000;
+}
+
+
+.photo{
+  width: 210px;
+  height: 200px;
+  border: 0.1em solid rgb(0,0,0);
+  border-radius: 1em;
+  overflow: hidden;
+  align-content: center;
+}
+table
+{position: relative;}
+table, td , th  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+th
+{
+  background-color: rgb(139, 139, 248);
+}
+
+.modalFavorite
+{
+width: 50px;
+height: 50px;
+float: right;
+position: relative;
+}
+
+
+#AddReview
+{
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  float: right;
+  background-color: rgb(93, 139, 224);
+}
+
+span.id02 
+{
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  line-height: 1.1;
+  color: black;
+  position: relative;
+  left: 40%;
+}
+
+button.id02
+{
+  position: relative;
+  left: 35%;
+  border-radius: 20px;
+  background-color: rgb(93, 139, 224);
+  width: 150px;
+  height: 50px;
+}
+textarea {
+  display: block;
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  left:22%;
+}
+
+
+.rating {
+  width: 300px;
+  margin: 0 auto ;
+  font-size: 60px;
+  overflow:hidden;
+  position: relative;
+  left: -5%;
+}
+.rating a {
+  float:right;
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: color .4s;
+  -moz-transition: color .4s;
+  -o-transition: color .4s;
+  transition: color .4s;
+}
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a		{
+  color: orange;
+  cursor: pointer;
+}

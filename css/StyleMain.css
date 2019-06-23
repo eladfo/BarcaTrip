@@ -1,0 +1,79 @@
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: rgb(169, 224, 187);
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: rgb(248, 241, 241);
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.image
+{
+  width: 350px;
+  height: 200px;
+}
+div.images {
+  border: 1px solid #ddd;
+  float: left;
+  width: 350px;
+  -moz-box-shadow: 2px 2px 3px 0px #aaa;
+  -webkit-box-shadow: 2px 2px 3px 0px #aaa;
+  -o-box-shadow: 2px 2px 3px 0px #aaa;
+  box-shadow: 2px 2px 3px 0px #aaa;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#aaa, Direction=134, Strength=3);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  position: relative;
+}
+
+div.images:hover{
+-moz-box-shadow: 2px 2px 3px 0px #999;
+-webkit-box-shadow: 2px 2px 3px 0px #999;
+-o-box-shadow: 2px 2px 3px 0px #999;
+box-shadow: 2px 2px 3px 0px #999;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#999, Direction=134, Strength=3);
+}
+
+div.images:hover .description{
+  color: #2d2d2d;
+}
+
+h1 { color: black; 
+  font-family: 'Lobster', cursive; 
+  font-size: 30px; 
+  font-weight: bold; 
+  line-height: 48px; 
+  text-shadow: 1px 0 0 #fff;
+  position: relative;
+  float: left;
+  top: 40%;
+  left: 10%;
+}

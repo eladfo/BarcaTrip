@@ -1,0 +1,57 @@
+<html>
+ 
+    <head>
+        <title>Barcelona</title>
+    </head>
+    <body ng-app="myApp">
+        <!-- load angular -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+        <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+
+    
+        <!-- load css -->
+        <link href="css/StylePoi.css" rel="stylesheet">
+        <link href="css/Style.css" rel="stylesheet">
+        <link href="css/StyleFavorite.css" rel="stylesheet">
+        <link href="css/StyleMain.css" rel="stylesheet">
+
+
+        <!-- load app -->
+        <script src="app.js"></script>
+
+        <!-- load controllers -->
+        <script src="pages/about/aboutController.js"></script>
+        <script src="pages/poi/poiController.js"></script>
+        <script src="pages/favorite/favorite.js"></script>
+        <script src="pages/main/mainController.js"></script>
+        <script src="pages/login/loginController.js"></script>
+        <script src="pages/register/registerController.js"></script>
+
+        
+        <!-- the website -->        
+        <div id="menu" >
+                
+            <ul>
+                <label id="LogOutlbl">Hello guest</label>
+                <input id="LogOutbut" type="button"  id="LogOut" value="Log Out"  onclick="LogOut()">
+                 <li id="MenuLogIn"><a href="#!">LogIn</a></li>
+                 <li id="MenuRegister"><a href="#!register">register</a></li>
+                 <li><a href="#!about">About</a></li>
+                 <li><a href="#!poi">POI</a></li>
+                 <li id="MenuHome"><a href="#!main" >Home</a></li>
+                 <li id="MenuFavorite" ><a href="#!favorite" class="notification">
+                        <span>Favorites</span>
+                        <span class="badge" id="numbernoti"></span>
+                </a></li>
+            </ul>
+        </div>
+      
+       <!-- This section changes as the hashbang changes -->
+        <div ng-view></div>
+    </body>
+
+</html>
