@@ -1,9 +1,16 @@
-<h2>About</h2>
+<link rel="stylesheet" type="text/css" href="css/utillog.css">
+<link rel="stylesheet" type="text/css" href="css/mainlog.css">
 
-<!-- display button functionality -->
-<div>
-<p ng-repeat="(id, city) in abtCtrl.cities">
-    City Name: <span ng-bind="city.name"></span><br>
-    City State: <span ng-bind="city.state"></span><br>
-</p>
+<div class="limiter">
+		<div class="container-login100">
+            <h2>About</h2>
+
+            <!-- display button functionality -->
+            <div>
+            <p ng-repeat="(id, city) in abtCtrl.cities">
+                City Name: <span ng-bind="city.name"></span><br>
+                City State: <span ng-bind="city.state"></span><br>
+            </p>
+            </div>  
+    </div>
 </div>

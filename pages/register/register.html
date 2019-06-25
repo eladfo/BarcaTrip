@@ -14,8 +14,6 @@
     <script src="pages/register/vendor/select2/select2.min.js"></script>
     <script src="pages/register/js/global.js"></script>
 
-
-
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -24,89 +22,100 @@
                 </div>
                 <div class="card-body">
                     <form method="POST">
-                        <div class="form-row m-b-55">
-                            <div class="name">Name</div>
+                        <div class="form-row">
+                            <div class="name">Username</div>
                             <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
-                                            <label class="label--desc">first name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name">
-                                            <label class="label--desc">last name</label>
-                                        </div>
-                                    </div>
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="city" ng-model="user">
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="city" ng-model="pass">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">First Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="city" ng-model="firstname">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name">Last Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="city" ng-model="lastname">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-row">
                             <div class="name">City</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="city">
+                                    <input class="input--style-5" type="text" name="city" ng-model="city">
                                 </div>
                             </div>
                         </div>
+                        
+                        
 
                         <div class="form-row">
-                            <div class="name">Email</div>
+                            <div class="name">Country</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <div class="rs-select2">
+                                            <div class="select-dropdown"></div>
+                                            <select class="form-control" ng-change="unitChanged()" ng-model="country">
+                                                    <option value="" disabled selected>Choose country</option>
+                                                    <option ng-repeat="item in countries"  ng-value="item.Country">{{item.Country}}</option>
+                                            </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-row">
-                                <div class="name">Country</div>
+                                <div class="name">Email</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="country">
-                                                <option disabled="disabled" selected="selected">Choose option</option>
-                                                <option>country 1</option>
-                                                <option>country 2</option>
-                                                <option>country 3</option>
-                                            </select>
-                                            <div class="select-dropdown"></div>
-                                        </div>
+                                        <input class="input--style-5" type="email" name="email" ng-model="email">
                                     </div>
                                 </div>
                         </div>
 
                         <div class="form-row">
-                                <div class="name">Subject1</div>
-                                <div class="value">
-                                    <div class="input-group">
-                                        <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="subject1">
-                                                <option disabled="disabled" selected="selected">Choose option</option>
-                                                <option>Historic site</option>
-                                                <option>Attraction</option>
-                                                <option>Museums</option>
-                                                <option>Restaurants</option>
-                                            </select>
-                                            <div class="select-dropdown"></div>
-                                        </div>
+                            <div class="name">Category1</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="input--style-5">
+                                        <select class="form-control" ng-change="unitChanged()" ng-model="catg1">
+                                            <option value="" disabled selected>Choose first category</option>
+                                            <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
                         <div class="form-row">
-                            <div class="name">Subject2</div>
+                            <div class="name">Category2</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject2">
-                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>Historic site</option>
-                                            <option>Attraction</option>
-                                            <option>Museums</option>
-                                            <option>Restaurants</option>
+                                    <div class="rs-select2 select--no-search">
+                                        <select class="form-control" ng-change="unitChanged()" ng-model="catg2">
+                                            <option value="" disabled selected>Choose second category</option>
+                                            <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -119,9 +128,9 @@
                                 <div class="name">Question</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="subject2">
-                                                <option disabled="disabled" selected="selected">Choose option</option>
+                                        <div class="rs-select2 select--no-search">
+                                            <select name="subject2" ng-model="question">
+                                                <option value="" disabled selected>Choose question</option>
                                                 <option>Q1</option>
                                                 <option>Q2</option>
                                                 <option>Q3</option>
@@ -137,13 +146,13 @@
                                 <div class="name">Answer</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <input class="input--style-5" type="email" name="email">
+                                        <input class="input--style-5" type="text" name="answer" ng-model="answer">
                                     </div>
                                 </div>
                             </div>
                        
                         <div>
-                            <button class="btn btn--radius-2 btn--green" type="submit">Register</button>
+                            <button class="btn btn--radius-2 btn--green" type="submit" ng-click="Register()">Register</button>
                         </div>
                     </form>
                 </div>

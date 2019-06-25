@@ -27,7 +27,7 @@ angular.module("myApp")
             $scope.UpdateNumOfFavorite(userJsn.Username);
             $window.location.href = '#!main'
         }, function (error) {
-            alert("One of the details you entered are incorrect.");
+            alert(error.data.err);
         });      
    }
 
