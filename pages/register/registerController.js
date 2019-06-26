@@ -14,8 +14,13 @@ angular.module("myApp")
     $scope.email;
     $scope.catg1;
     $scope.catg2;
-    $scope.question;
-    $scope.answer;
+    $scope.q1;
+    $scope.q2;
+    $scope.q3;
+    $scope.answer1;
+    $scope.answer2;
+    $scope.answer3;
+
 
     let serverUrl = "http://localhost:3000/";
     
@@ -37,8 +42,6 @@ angular.module("myApp")
     });   
     /************/
 
-
-
     $scope.Register = function() 
    {
     let regJsn = {
@@ -49,10 +52,11 @@ angular.module("myApp")
         "City":$scope.city,
         "Country":$scope.country,
         "Email":$scope.email,
-        "QA":{"q":$scope.question, "a":$scope.answer},
+        "QA":[{"q":$scope.q1, "a":$scope.answer1},{"q":$scope.q2, "a":$scope.answer2},{"q":$scope.q3, "a":$scope.answer3}],
         "Categories":[$scope.catg1, $scope.catg2]
     };
     
+    console.log(regJsn.QA);
     $http({
         method: 'POST',
         url: serverUrl + "signUp",

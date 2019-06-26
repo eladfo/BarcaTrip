@@ -73,37 +73,33 @@
                             <div class="name">Country</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <div class="rs-select2">
-                                            <div class="select-dropdown"></div>
-                                            <select class="form-control" ng-change="unitChanged()" ng-model="country">
-                                                    <option value="" disabled selected>Choose country</option>
-                                                    <option ng-repeat="item in countries"  ng-value="item.Country">{{item.Country}}</option>
-                                            </select>
-                                    </div>
+                                    <div class="select-dropdown"></div>
+                                    <select class="form-control" ng-change="unitChanged()" ng-model="country">
+                                            <option value="" disabled selected>Choose country</option>
+                                            <option ng-repeat="item in countries"  ng-value="item.Country">{{item.Country}}</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-row">
-                                <div class="name">Email</div>
-                                <div class="value">
-                                    <div class="input-group">
-                                        <input class="input--style-5" type="email" name="email" ng-model="email">
-                                    </div>
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email" ng-model="email">
                                 </div>
+                            </div>
                         </div>
 
                         <div class="form-row">
                             <div class="name">Category1</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <div class="input--style-5">
-                                        <select class="form-control" ng-change="unitChanged()" ng-model="catg1">
-                                            <option value="" disabled selected>Choose first category</option>
-                                            <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
+                                    <select class="form-control" ng-change="unitChanged()" ng-model="catg1">
+                                        <option value="" disabled selected>Choose first category</option>
+                                        <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
                                 </div>
                             </div>
                         </div>
@@ -112,45 +108,93 @@
                             <div class="name">Category2</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <div class="rs-select2 select--no-search">
-                                        <select class="form-control" ng-change="unitChanged()" ng-model="catg2">
-                                            <option value="" disabled selected>Choose second category</option>
-                                            <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
+                                    <select class="form-control" ng-change="unitChanged()" ng-model="catg2">
+                                        <option value="" disabled selected>Choose second category</option>
+                                        <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                                <div class="name">Question1</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <select name="subject2" ng-model="q1">
+                                            <option value="" disabled selected>Choose question</option>
+                                            <option>Q1</option>
+                                            <option>Q2</option>
+                                            <option>Q3</option>
+                                            <option>Q4</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
 
-
                         <div class="form-row">
-                                <div class="name">Question</div>
+                                <div class="name">Answer1</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <div class="rs-select2 select--no-search">
-                                            <select name="subject2" ng-model="question">
-                                                <option value="" disabled selected>Choose question</option>
-                                                <option>Q1</option>
-                                                <option>Q2</option>
-                                                <option>Q3</option>
-                                                <option>Q4</option>
-                                            </select>
-                                            <div class="select-dropdown"></div>
-                                        </div>
+                                        <input class="input--style-5" type="text" name="answer" ng-model="answer1">
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        <div class="form-row">
+                                <div class="name">Question2</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <select name="subject2" ng-model="q2">
+                                            <option value="" disabled selected>Choose question</option>
+                                            <option>Q1</option>
+                                            <option>Q2</option>
+                                            <option>Q3</option>
+                                            <option>Q4</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
                                     </div>
                                 </div>
                         </div>
 
                         <div class="form-row">
-                                <div class="name">Answer</div>
+                                <div class="name">Answer2</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <input class="input--style-5" type="text" name="answer" ng-model="answer">
+                                        <input class="input--style-5" type="text" name="answer" ng-model="answer2">
                                     </div>
                                 </div>
-                            </div>
-                       
+                        </div>
+
+                        <div class="form-row">
+                                <div class="name">Question3</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <select name="subject2" ng-model="q3">
+                                            <option value="" disabled selected>Choose question</option>
+                                            <option>Q1</option>
+                                            <option>Q2</option>
+                                            <option>Q3</option>
+                                            <option>Q4</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="form-row">
+                                <div class="name">Answer3</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="answer" ng-model="answer3">
+                                    </div>
+                                </div>
+                        </div>
+
+
+
                         <div>
                             <button class="btn btn--radius-2 btn--green" type="submit" ng-click="Register()">Register</button>
                         </div>
