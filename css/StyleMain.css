@@ -77,3 +77,12 @@ h1 { color: black;
   top: 40%;
   left: 10%;
 }
+
+#div-ngview{
+        background-image:url('/images/bn/barca-bg-02.jpg'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+}

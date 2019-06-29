@@ -1,6 +1,5 @@
 <html>
- 
-    <head>
+     <head>
         <title>Barcelona</title>
     </head>
     <body ng-app="myApp">
@@ -30,10 +29,12 @@
         <script src="pages/main/mainController.js"></script>
         <script src="pages/login/loginController.js"></script>
         <script src="pages/register/registerController.js"></script>
+        <script src="pages/forgot/forgotController.js"></script>
+
 
         
         <!-- the website -->        
-        <div id="menu" style="height: 90px">
+        <div id="menu" style="height: 80px">
                 
             <ul>
                 <label id="LogOutlbl">Hello guest</label>
@@ -51,7 +52,7 @@
         </div>
       
        <!-- This section changes as the hashbang changes -->
-        <div ng-view></div>
+        <div id="div-ngview" ng-view style= ></div>
     </body>
 
 </html>

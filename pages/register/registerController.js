@@ -44,29 +44,27 @@ angular.module("myApp")
 
     $scope.Register = function() 
    {
-    let regJsn = {
-        "Username":$scope.user,
-        "Password":$scope.pass,
-        "FirstName":$scope.firstname,
-        "LastName":$scope.lastname,
-        "City":$scope.city,
-        "Country":$scope.country,
-        "Email":$scope.email,
-        "QA":[{"q":$scope.q1, "a":$scope.answer1},{"q":$scope.q2, "a":$scope.answer2},{"q":$scope.q3, "a":$scope.answer3}],
-        "Categories":[$scope.catg1, $scope.catg2]
-    };
-    
-    console.log(regJsn.QA);
-    $http({
-        method: 'POST',
-        url: serverUrl + "signUp",
-        data: regJsn
-    }).then(function (success) {
-        alert(success.data.err)
-        $window.location.href = '#!main'
-    }, function (error) {
-        console.log(error);
-        alert(error.data.err);
-    });     
+        let regJsn = {
+            "Username":$scope.user,
+            "Password":$scope.pass,
+            "FirstName":$scope.firstname,
+            "LastName":$scope.lastname,
+            "City":$scope.city,
+            "Country":$scope.country,
+            "Email":$scope.email,
+            "QA":[{"q":$scope.q1, "a":$scope.answer1},{"q":$scope.q2, "a":$scope.answer2},{"q":$scope.q3, "a":$scope.answer3}],
+            "Categories":[$scope.catg1, $scope.catg2]
+        };
+        
+        $http({
+            method: 'POST',
+            url: serverUrl + "signUp",
+            data: regJsn
+        }).then(function (success) {
+            alert(success.data.err)
+            $window.location.href = '#!main'
+        }, function (error) {
+            alert(error.data.err);
+        });     
    }   
 });

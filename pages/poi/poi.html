@@ -1,35 +1,34 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <link href="css/StylePoi.css" rel="stylesheet">
-<div class="limiter">
+
+<div class="content">
         
-        <h1>Point Of Interest</h1>
-
-        <input ng-model="Search" id ="textSearch" type="text" placeholder="Search"/>
-        <label>Select a category</label>
-        <input type="button" value="Search" ng-click="all()"/>
-        <select ng-model="myDropDown"  ng-click = "choice()" >
-                <option value="All"> All </option>
-                <option value="Historic" > Historic </option>
-                <option value="Attraction" > Attraction </option>
-                <option value="Museums" >Museums</option>
-                <option value="Restaurants" >Restaurants</option>
-        </select>
-
-        <div class = "content"> 
+                <div class="row">
+                        <h1>Point Of Interest</h1>
+                        <input ng-model="Search" id ="textSearch" type="text" placeholder="Search"/>
+                        <label>Select a category</label>
+                        <input type="button" value="Search" ng-click="all()"/>
+                        <select ng-model="myDropDown"  ng-click = "choice()" >
+                                <option value="All"> All </option>
+                                <option value="Historic" > Historic </option>
+                                <option value="Attraction" > Attraction </option>
+                                <option value="Museums" >Museums</option>
+                                <option value="Restaurants" >Restaurants</option>
+                        </select>
+                </div>
 
                 <div class="row" ng-show="myDropDown=='All' || myDropDown=='Historic' || myDropDown == null ">
                         <div class="head">
                                 <h3>Historic Siet</h3>
                         </div>   
-                <div class="container" ng-repeat=" pic in poiCtrl.Historic" >
-                        <div class="images">
-                        <img class = "image" id="test" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
-                        <p class="description">{{ pic.name }}</p>
-                        <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
-                        </div> 
-                </div>
-        
+                        <div class="container" ng-repeat=" pic in poiCtrl.Historic" >
+                                <div class="images">
+                                        <img class = "image" id="test" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
+                                        <p class="description">{{ pic.name }}</p>
+                                        <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
+                                </div> 
+                        </div>
                 </div>
 
                 <div  class="row" ng-show="myDropDown=='All' || myDropDown=='Attraction' || myDropDown == null ">
@@ -47,6 +46,7 @@
                         </div>
                 
                 </div>
+                
                 <div class="row" ng-show="myDropDown=='All' || myDropDown=='Museums' || myDropDown == null ">
                         <div class="head">
                                 <h3>Museums</h3>
@@ -54,53 +54,45 @@
                 
                         <div class="container" ng-repeat=" pic in poiCtrl.Museums" >
                                 <div class="images">
+                                        <img class = "image" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
+                                        <p class="description">{{ pic.name }}</p>
+                                        <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
+                                </div> 
+                        </div>
+                </div>
+
+                <div class="row" ng-show="myDropDown=='All' || myDropDown=='Restaurants' || myDropDown == null ">
+        
+                        <div class="head">
+                                <h3>Restaurants</h3>
+                        </div>  
+
+                        <div class="container" ng-repeat=" pic in poiCtrl.Restaurants" >
+        
+                                <div class="images">
                                 <img class = "image" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
                                 <p class="description">{{ pic.name }}</p>
                                 <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
+
                                 </div> 
                         </div>
-                
-                        </div>
-                        <div class="row" ng-show="myDropDown=='All' || myDropDown=='Restaurants' || myDropDown == null ">
-                
-                                <div class="head">
-                                        <h3>Restaurants</h3>
-                                </div>  
+                </div>
 
-                                <div class="container" ng-repeat=" pic in poiCtrl.Restaurants" >
-                
-                                        <div class="images">
-                                        <img class = "image" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
-                                        <p class="description">{{ pic.name }}</p>
-                                        <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
-
-                                        </div> 
-                                </div>
-                        
-                        </div>
-
-                        <div class="row" ng-show="search">
-
-                                <div class="head">
-                                        <h3>Result Search:</h3>
-                                </div>   
-                        
-                
-                                <div class="container" ng-repeat=" pic in poiCtrl.resSearch" >
-                
-                                        <div class="images">
-                                        <img class = "image" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
-                                        <p class="description">{{ pic.name }}</p>
-                                        <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
-                                        </div>                                  
-
-                                </div>
-                        
-                        </div>
+                <div class="row" ng-show="search">
+                        <div class="head">
+                                <h3>Result Search:</h3>
+                        </div>   
+                        <div class="container" ng-repeat=" pic in poiCtrl.resSearch" >
+                                <div class="images">
+                                <img class = "image" ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
+                                <p class="description">{{ pic.name }}</p>
+                                <img class = "image1" ng-show="isConecting"  id="favoriteImage" ng-click="ClickFavorite(pic)"  ng-src= "{{ pic.IsFavorite }} " alt="Snow" >
+                                </div>                             
+                        </div>                
+                </div>
 
         
 
-        </div>
 
         <div id="id01" class="w3-modal">
         <div class="w3-modal-content">

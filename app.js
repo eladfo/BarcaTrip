@@ -33,6 +33,10 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/favorite/favorite.html',
             controller : 'favoriteController as favoriteCtrl'
         })
+        .when('/forgot', {
+            templateUrl: 'pages/forgot/forgot.html',
+            controller : 'forgotController as forgotCtrl'
+        })
         // other
         .otherwise({ redirectTo: '/' });
 
