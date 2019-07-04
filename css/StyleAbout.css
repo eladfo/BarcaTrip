@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Dancing+Script');
+body, html
+ {
+  position: relative;
+  background-image:url('/images/bg/barca-bg-02.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+#header
+{
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  font-size: 65px;
+  top: 20px;
+  left: 45%;
+}
+
+#second_heder
+{
+	position: relative;
+	top: 50px;
+	float: left;
+	text-align: center;
+	margin: 0 0;
+	padding: 0 150px;
+}
+.mySlides {display:none;}
+
+img{
+	position: relative;
+	max-height: 300px;
+	max-width: 600px;
+	width: 600px;
+	height: 300px;
+	left: 400px;
+	top: 60px;
+}
+#leftButton
+{
+	position: relative;
+	top: -70px;
+	left: 1010px;
+}
+#rightButton
+{
+	position: relative;
+	top: -70px;
+	left: 300px;
+}

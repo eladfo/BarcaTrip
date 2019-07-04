@@ -9,11 +9,8 @@ angular.module("myApp")
     $scope.ans;
     $scope.pass;
 
-    $scope.questions = [
-        {"Q":"Q1"},
-        {"Q":"Q2"},
-        {"Q":"Q3"}
-    ];
+    $scope.questions = ["What is your dream car?", "Where do you want to retire?",
+                        "Who was your least favorite boss?", "What's your favorite security question?"]
     
     /************/
 

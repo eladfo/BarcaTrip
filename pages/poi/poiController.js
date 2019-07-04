@@ -1,6 +1,6 @@
 // poi controller
 angular.module("myApp")
-.controller("poiController", function ($scope , $http , $window ,myService) {
+.controller("poiController", function ($scope , $http , $window ) {
     $scope.RankReview = 1;
     self = this;    
     $scope.favoriteSrc= "EmptyStar.jpg";

@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Source+Sans+Pro:200,300,400,600');
    
 
+
+
+
+
     h1 { color: black; 
         font-family: 'Lobster', cursive; 
         font-size: 48px; 
         font-weight: bold; 
         line-height: 48px; 
         margin: 0 0 18px; 
-        text-shadow: 1px 0 0 #fff;
         position: absolute;
         top: 15%;
         left: 35%;
@@ -264,9 +267,6 @@ float: right;
 position: relative;
 }
 
-
-
-
 .rating {
 			width: 300px;
 			margin: 0 auto ;
@@ -295,5 +295,4 @@ position: relative;
 {
   color: orange;
   font-size: 40px;
-
 }		

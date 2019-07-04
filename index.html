@@ -17,6 +17,7 @@
         <link href="css/Style.css" rel="stylesheet">
         <link href="css/StyleFavorite.css" rel="stylesheet">
         <link href="css/StyleMain.css" rel="stylesheet">
+        
 
 
         <!-- load app -->
@@ -30,11 +31,12 @@
         <script src="pages/login/loginController.js"></script>
         <script src="pages/register/registerController.js"></script>
         <script src="pages/forgot/forgotController.js"></script>
+        <script src="pages/Map/MapController.js"></script>
 
 
         
         <!-- the website -->        
-        <div id="menu" style="height: 80px">
+        <div id="menu">
                 
             <ul>
                 <label id="LogOutlbl">Hello guest</label>
@@ -52,7 +54,7 @@
         </div>
       
        <!-- This section changes as the hashbang changes -->
-        <div id="div-ngview" ng-view></div>
+        <div ng-view></div>
     </body>
 
 </html>

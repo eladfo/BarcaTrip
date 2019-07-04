@@ -1,50 +1,39 @@
 
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-}
-
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
-}
-
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Dancing+Script');
 
 * {
 	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
+  padding: 0px; 
 }
 
-body, html {
-	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
-}
 
+
+
+body, html
+ {
+  position: relative;
+  background-image:url('/images/bg/barca-bg-02.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+}
+#header_main
+{
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  font-size: 65px;
+  top: 20px;
+  left: 180px;
+}
+#card_main
+{
+  position: relative;
+  top: 120px;
+  left: -250px;
+}
 /*---------------------------------------------*/
 a {
 	font-family: Tahoma, Geneva, sans-serif;
@@ -486,5 +475,97 @@ input.input100 {
   }
 }
 
+#images_login
+{
+  top: -20%;
+  background: #fff;
+  margin: 15px;
+}
 
 
+.modal-block{ 
+  position: relative;
+  float: left;
+  width: 400px;
+  height: 300px;
+
+}
+
+.modal-name
+{
+font-family: 'Lobster', cursive;
+font-size: 30px;
+line-height: 1.1;
+color: black;
+position: relative;
+}
+
+.modal-information{
+  line-height: 1.5;
+  font-size: 15px;
+  color: #000000;
+}
+
+
+.photo{
+  width: 210px;
+  height: 200px;
+  border: 0.1em solid rgb(0,0,0);
+  border-radius: 1em;
+  overflow: hidden;
+  align-content: center;
+}
+table
+{position: relative;}
+table, td , th  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+th
+{
+  background-color: rgb(139, 139, 248);
+}
+
+.modalFavorite
+{
+width: 50px;
+height: 50px;
+float: right;
+position: relative;
+}
+
+
+
+
+.rating {
+			width: 300px;
+			margin: 0 auto ;
+			font-size: 60px;
+      overflow:hidden;
+      position: relative;
+      left: -5%;
+		}
+		.rating a {
+			float:right;
+			color: #aaa;
+			text-decoration: none;
+			-webkit-transition: color .4s;
+			-moz-transition: color .4s;
+			-o-transition: color .4s;
+			transition: color .4s;
+		}
+		.rating a:hover,
+		.rating a:hover ~ a,
+		.rating a:focus,
+		.rating a:focus ~ a		{
+			color: orange;
+			cursor: pointer;
+		}
+.Star
+{
+  color: orange;
+  font-size: 40px;
+
+}	

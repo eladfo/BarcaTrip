@@ -1,5 +1,14 @@
-#forgot-btn{
-    padding: 10px 16px;
-    margin: 25px 0;
-   
+body, html
+ {
+  position: relative;
+  background-image:url('/images/bg/barca-bg-02.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card{
+   opacity: 0.83
 }

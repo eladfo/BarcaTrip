@@ -1,62 +1,64 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="/pages/forgot/css/forgot.css" rel="stylesheet" id="main">
 
-<div class="form-gap"></div>
 <div class="container">
+  <br><br>
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-default">
-              <div class="panel-body">
+      <div class="col"></div>
+      <aside id="card_main" class="col-sm-4">
+          <div class="card">
+            <article class="card-body">
                 <div class="text-center">
                   <h3><i class="fa fa-lock fa-4x"></i></h3>
                   <h2 class="text-center">Forgot Password?</h2>
-                  <p>You can restore your password here.</p>
+                  <p>You can restore your password here</p>
                   <div class="panel-body">
-    
-                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                      <form name="forgotForm" required>
                            
                         <div class="form-group">
                             <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
-                            <input id="user" placeholder=" User Name" class="form-control"  type="text" ng-model="user">
+                              <span class="input-group-text"> <i class="fa fa-user"></i></span>
+                              <input id="user" placeholder=" User Name" class="form-control"  type="text" ng-model="user" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <select id="question" placeholder=" User Name" class="form-control"  type="text" ng-model="q">
-                                    <option value="" disabled selected>Choose your qestion</option>
-                                    <option ng-repeat="item in questions" ng-value="item.Q">{{item.Q}}</option>    
+                            <select id="question" placeholder=" User Name" class="form-control"  type="text" ng-model="q" required>
+                                    <option value="" disabled selected>Choose your question</option>
+                                    <option ng-repeat="item in questions" ng-value="item">{{item}}</option>    
                             </select>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-                                <input id="answer" placeholder=" Enter your answer" class="form-control"  type="text" ng-model="ans">
+                                <span class="input-group-text"> <i class="fa fa-qrcode"></i></i></span>
+                                <input id="answer" placeholder=" Enter your answer" class="form-control"  type="text" ng-model="ans" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input id="forgot-btn" name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Restore Password" ng-click="restorePassword()">
+                            <button name="recover-submit" class="btn btn-primary btn-block"
+                                    ng-click="forgotForm.$valid && restorePassword()"> Restore Password </button>
                         </div>
-                        
+
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                <span class="input-group-text"> <i class="fa fa-lock"></i></i></span>
                                 <text id="pass" class="form-control"  type="text" ng-bind="pass">
                             </div>
                         </div>
 
-                    </form>
+                      </form>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
-          </div>
+          </aside>
+          <div class="col"></div>
 	</div>
 </div>

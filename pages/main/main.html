@@ -1,89 +1,86 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-                <div class="split left">
-                        <div class="centered" >
-                                <h1> Hot Point Of Interest</h1>
-                                <div class="images" ng-repeat=" pic in mainCtrl.save" >
-                                        <img class = "image" id="test"  ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
-                                        <p class="description">{{ pic.Name}}</p>
-                                </div> 
+<div class="split left">
+        <div class="centered" >
+
+                <h1 id = "header_main_main_left"> Hot Point Of Interest</h1>
+                <div class="images" ng-repeat=" pic in mainCtrl.save" >
+                        <img class = "image" id="test"  ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
+                        <p class="description">{{ pic.Name}}</p>
+                </div> 
+        </div>
+</div>
+                
+<div class="split right">
+<div class="centered">
+        <h1 ng-show="NumLastFavorite " id = "header_main_main_right"> Last Saves Point Of Interest</h1>
+        <h1 ng-show="!NumLastFavorite " id = "header_main_main_right"> There is no favorite!!</h1>
+
+        <div class="images" ng-repeat=" pic in mainCtrl.show" >
+                <img class = "image" id="test"  ng-click="ImgClick(pic)" id="{{id}}" ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
+                <p class="description">{{ pic.Name}}</p>
+        </div> 
+</div>
+</div>
+
+
+
+<div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+                <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <figure>
+                                <span class="modal-name" ng-model="title"> {{title}}</span>
+                                <img class = "modalFavorite" ng-model="Res"  id="favoriteImage" ng-click="ClickFavorite1()"  ng-src= " {{ Res }} " alt="Snow" > 
+                        <div> 
+                                <p class="modal-information" ng-model="users" ><b>Number of waching:</b> {{users}}</p>
+                                <p class="modal-information" ng-model="desc"><b>description:</b>{{desc}}</p>
+                                <button  id="AddReview" type="button" ng-click = "addReview()" > Add Review </button>
+                                <p class="modal-information" ng-model="rank"><b>Rank:</b>  {{rank}}</p>
+                                <p class="modal-information" ><b>Review:</b></p>
+                                        <table ng-show = "tableVis">
+                                                <tr>
+                                                <th>Date</th>
+                                                <th>Review</th>
+                                                <th>Rank</th>                      
+                                                </tr>
+                                                <tr ng-repeat=" review in mainCtrl.review">
+                                                <td>{{ review.Date }}</td>
+                                                <td>{{ review.Review }}</td>
+                                                <td>
+                                                <a class="Star" ng-show=" {{review.Rank}} == 5 " ng-click="OnStar(5)" title="Give 5 stars">☆☆☆☆☆</a>
+                                                <a class="Star" ng-show=" {{review.Rank}} == 4 " ng-click="OnStar(4)" title="Give 4 stars">☆☆☆☆☆</a>
+                                                <a class="Star" ng-show=" {{review.Rank}} == 3 " ng-click="OnStar(3)" title="Give 3 stars">☆☆☆</a>
+                                                <a class="Star" ng-show=" {{review.Rank}} == 2 " ng-click="OnStar(2)" title="Give 2 stars">☆☆</a>
+                                                        <a class="Star" ng-show=" {{review.Rank}} == 1 " ng-click="OnStar(1)" title="Give 1 star">☆</a>
+                                                </td>
+                                                </tr>
+                                        </table>
+                                <p class="modal-information" ng-show = "!tableVis" ng-model="rank"><b>There is no Review!</b></p>
                         </div>
-                    </div>
-                          
-                    <div class="split right">
-                        <div class="centered">
-                              <h2>John Doe</h2>
-                              <p>Some text here too.</p>
-                            </div>
-                    </div>
-                    
-
-
-                    <div id="id01" class="w3-modal">
-                            <div class="w3-modal-content">
-                              <div class="w3-container">
-                                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                <figure>
-                                 <span class="modal-name" ng-model="title"> {{title}}</span>
-                                  <img class = "modalFavorite" ng-model="Res"  id="favoriteImage" ng-click="ClickFavorite1()"  ng-src= " {{ Res }} " alt="Snow" > 
-                                 <div> 
-                                          <p class="modal-information" ng-model="users" ><b>Number of waching:</b> {{users}}</p>
-                                          <p class="modal-information" ng-model="desc"><b>description:</b>{{desc}}</p>
-                                          <button  id="AddReview" type="button" ng-click = "addReview()" > Add Review </button>
-                                          <p class="modal-information" ng-model="rank"><b>Rank:</b>  {{rank}}</p>
-                                          <p class="modal-information" ><b>Review:</b></p>
-                                                  <table ng-show = "tableVis">
-                                                          <tr>
-                                                            <th>Date</th>
-                                                            <th>Review</th>
-                                                            <th>Rank</th>                      
-                                                          </tr>
-                                                          <tr ng-repeat=" review in mainCtrl.review">
-                                                            <td>{{ review.Date }}</td>
-                                                            <td>{{ review.Review }}</td>
-                                                            <td>
-                                                          <a class="Star" ng-show=" {{review.Rank}} == 5 " ng-click="OnStar(5)" title="Give 5 stars">☆☆☆☆☆</a>
-                                                          <a class="Star" ng-show=" {{review.Rank}} == 4 " ng-click="OnStar(4)" title="Give 4 stars">☆☆☆☆☆</a>
-                                                          <a class="Star" ng-show=" {{review.Rank}} == 3 " ng-click="OnStar(3)" title="Give 3 stars">☆☆☆</a>
-                                                          <a class="Star" ng-show=" {{review.Rank}} == 2 " ng-click="OnStar(2)" title="Give 2 stars">☆☆</a>
-                                                                  <a class="Star" ng-show=" {{review.Rank}} == 1 " ng-click="OnStar(1)" title="Give 1 star">☆</a>
-                                                          </td>
-                          
-                                                          </tr>
-                                                  </table>
-                                          
-                                          <p class="modal-information" ng-show = "!tableVis" ng-model="rank"><b>There is no Review!</b></p>
-                          
-                                 </div>
-                               </figure>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          
-                          
-                          
-                          <div id="id02" class="w3-modal">
-                                  <div class="w3-modal-content">
-                                    <div class="w3-container">
-                                      <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                      <figure> 
-                                      <span class="id02"> New Review :</span>
-                          
-                                       <div class="id02">
-                                          <div class="rating"><!--
-                                  --><a  id="5" ng-click="OnStar(5)" title="Give 5 stars">☆</a><!--
-                                  --><a  id="4" ng-click="OnStar(4)" title="Give 4 stars">☆</a><!--
-                                  --><a  id="3" ng-click="OnStar(3)" title="Give 3 stars">☆</a><!--
-                                  --><a  id="2" ng-click="OnStar(2)" title="Give 2 stars">☆</a><!--
-                                  --><a  id="1" ng-click="OnStar(1)" title="Give 1 star">☆</a>
-                                          </div>  
-                                          
-                                          <textarea id="ReviewText"class="text-to-translate" placeholder="Text to translate"></textarea><br>                    
-                                  
-                                          <button class ="id02" type="button" ng-click = "AddDbReview()" > Add Review </button>      
-                                       </div>
-                                  </figure>
-                                    </div>
-                                  </div>
+                        </figure>
+                </div>
+        </div>
+</div>        
+        
+<div id="id02" class="w3-modal">
+        <div class="w3-modal-content">
+                <div class="w3-container">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <figure> 
+                                <span class="id02"> New Review :</span>
+                                <div class="id02">
+                                        <div class="rating"><!--
+                                                --><a  id="5" ng-click="OnStar(5)" title="Give 5 stars">☆</a><!--
+                                                --><a  id="4" ng-click="OnStar(4)" title="Give 4 stars">☆</a><!--
+                                                --><a  id="3" ng-click="OnStar(3)" title="Give 3 stars">☆</a><!--
+                                                --><a  id="2" ng-click="OnStar(2)" title="Give 2 stars">☆</a><!--
+                                                --><a  id="1" ng-click="OnStar(1)" title="Give 1 star">☆</a>
+                                        </div>
+                                        <textarea id="ReviewText"class="text-to-translate" placeholder="Text to translate"></textarea><br>                    
+                                        <button class ="id02" type="button" ng-click = "AddDbReview()" > Add Review </button>      
                                 </div>
+                        </figure>
+                </div>
+        </div>
+</div>

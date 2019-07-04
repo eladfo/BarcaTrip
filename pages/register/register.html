@@ -1,4 +1,6 @@
     <!-- Icons font CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link href="/pages/register/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
@@ -11,20 +13,25 @@
     <script src="/pages/register/vendor/jquery/jquery.min.js"></script>
     <script src="/pages/register/vendor/select2/select2.min.js"></script>
     <script src="/pages/register/js/global.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <div class="page-wrapper p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
-            <div class="card card-5">
+            <div class="card card-5" style="opacity: 0.83">
                 <div class="card-heading">
                     <h2 class="title">Sign Up</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form name="formi" method="POST" required>
                         <div class="form-row">
                             <div class="name">Username</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="city" ng-model="user">
+                                    <input class="input--style-5 form-control" type="text" name="user" ng-model="user" required>
+                                    <!-- <span ng-show="formi.user.$invalid">The name is required.</span> -->
                                 </div>
                             </div>
                         </div>
@@ -33,7 +40,7 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="city" ng-model="pass">
+                                    <input class="form-control" type="text" name="pass" ng-model="pass" required>
                                 </div>
                             </div>
                         </div>
@@ -42,16 +49,16 @@
                             <div class="name">First Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="city" ng-model="firstname">
+                                    <input class="input--style-5" type="text" name="city" ng-model="firstname" required>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="form-row">
+                        <div class="form-row" >
                             <div class="name">Last Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="city" ng-model="lastname">
+                                    <input class="input--style-5" type="text" name="city" ng-model="lastname" required>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +67,7 @@
                             <div class="name">City</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="city" ng-model="city">
+                                    <input class="input--style-5" type="text" name="city" ng-model="city" required>
                                 </div>
                             </div>
                         </div>
@@ -70,13 +77,10 @@
                         <div class="form-row">
                             <div class="name">Country</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <div class="select-dropdown"></div>
-                                    <select class="form-control" ng-change="unitChanged()" ng-model="country">
+                                    <select class="custom-select" ng-change="unitChanged()" ng-model="country" required>
                                             <option value="" disabled selected>Choose country</option>
                                             <option ng-repeat="item in countries"  ng-value="item.Country">{{item.Country}}</option>
                                     </select>
-                                </div>
                             </div>
                         </div>
 
@@ -92,26 +96,20 @@
                         <div class="form-row">
                             <div class="name">Category1</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <select class="form-control" ng-change="unitChanged()" ng-model="catg1">
+                                    <select class="custom-select" ng-model="catg1">
                                         <option value="" disabled selected>Choose first category</option>
                                         <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
                                     </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="name">Category2</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <select class="form-control" ng-change="unitChanged()" ng-model="catg2">
+                                    <select class="custom-select" ng-model="catg2">
                                         <option value="" disabled selected>Choose second category</option>
                                         <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
                                     </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
                             </div>
                         </div>
 
@@ -119,16 +117,10 @@
                         <div class="form-row">
                                 <div class="name">Question1</div>
                                 <div class="value">
-                                    <div class="input-group">
-                                        <select name="subject2" ng-model="q1">
+                                        <select class="custom-select" name="subject2" ng-model="q1">
                                             <option value="" disabled selected>Choose question</option>
-                                            <option>Q1</option>
-                                            <option>Q2</option>
-                                            <option>Q3</option>
-                                            <option>Q4</option>
+                                            <option ng-repeat="item in questions" ng-value="item">{{item}}</option>
                                         </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
                                 </div>
                         </div>
 
@@ -136,7 +128,7 @@
                                 <div class="name">Answer1</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <input class="input--style-5" type="text" name="answer" ng-model="answer1">
+                                        <input ng-disabled="formi.subject2.$invalid" class="input--style-5" type="text" name="answer" ng-model="answer1">
                                     </div>
                                 </div>
                         </div>
@@ -144,16 +136,10 @@
                         <div class="form-row">
                                 <div class="name">Question2</div>
                                 <div class="value">
-                                    <div class="input-group">
-                                        <select name="subject2" ng-model="q2">
-                                            <option value="" disabled selected>Choose question</option>
-                                            <option>Q1</option>
-                                            <option>Q2</option>
-                                            <option>Q3</option>
-                                            <option>Q4</option>
+                                        <select class="custom-select" name="subject2" ng-model="q2">
+                                                <option value="" disabled selected>Choose question</option>
+                                                <option ng-repeat="item in questions" ng-value="item">{{item}}</option>
                                         </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
                                 </div>
                         </div>
 
@@ -169,16 +155,10 @@
                         <div class="form-row">
                                 <div class="name">Question3</div>
                                 <div class="value">
-                                    <div class="input-group">
-                                        <select name="subject2" ng-model="q3">
+                                        <select class="custom-select" name="subject2" ng-model="q3">
                                             <option value="" disabled selected>Choose question</option>
-                                            <option>Q1</option>
-                                            <option>Q2</option>
-                                            <option>Q3</option>
-                                            <option>Q4</option>
+                                            <option ng-repeat="item in questions" ng-value="item">{{item}}</option>
                                         </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
                                 </div>
                         </div>
 
@@ -190,12 +170,7 @@
                                     </div>
                                 </div>
                         </div>
-
-
-
-                        <div>
-                            <button class="btn btn--radius-2 btn--green" type="submit" ng-click="Register()">Register</button>
-                        </div>
+                        <button class="btn btn--radius-2 btn--green" type="submit" ng-click="formi.$valid && Register()">Register</button>
                     </form>
                 </div>
             </div>

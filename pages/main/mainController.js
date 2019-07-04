@@ -7,6 +7,9 @@ angular.module("myApp")
     self.favorite = new Array();
     self.save = new Array();
     self.review = new Array();
+    self.LastSaves = new Array();
+    self.show = new Array();
+
 
     $scope.numberFavorite;
     $scope.RankReview=1;
@@ -37,6 +40,61 @@ angular.module("myApp")
     function myError(response) {
         alert(response.data) 
     });
+
+
+
+
+    $http({method : "GET",
+    url : "http://localhost:3000/private/getLastFavoritePOI/"+$window.sessionStorage.getItem("Username") , 
+    headers : {
+    "Authorization" : $window.sessionStorage.getItem("Token")
+    }
+    }).then(function mySuccess(response) {
+        var count=0;
+        self.LastSaves = response.data;
+        if(response.data.length == undefined)
+        {
+            $scope.NumLastFavorite = false;
+        }
+        else
+        {
+            $scope.NumLastFavorite = true;
+        }
+
+        if($scope.NumLastFavorite)
+        {
+        $http({method : "GET",
+        url : "http://localhost:3000/getAllPOI", 
+        headers : {
+        "Authorization" : $window.sessionStorage.getItem("Token")
+        }
+        }).then(function mySuccess(response) {
+            $scope.numberFavorite= response.data.length;
+            
+            for(j=0 ; j<Object.keys(self.LastSaves).length ; j++)
+            {
+                for(i=0 ; i<Object.keys(response.data).length ; i++)
+                    if(self.LastSaves[j].POI_ID == response.data[i].ID && count!=2)
+                    {
+                        self.show[j] = response.data[i];
+                        count++;
+                    }
+                              
+                        
+            }
+        } ,
+        function myError(response) {
+            alert(response.data) 
+        });
+    }
+
+    } ,
+    function myError(response) {
+        alert(response.data) 
+    });
+
+
+
 
 
     $scope.ImgClick = function(pic)
@@ -146,7 +204,9 @@ angular.module("myApp")
             $scope.numberFavorite=$scope.numberFavorite-1;
             document.getElementById("numbernoti").innerHTML = $scope.numberFavorite;  
             $scope.updateFavorite(); 
-            $scope.Res = "EmptyStar.jpg"            
+            $scope.updateLastFavorite();
+            $scope.Res = "EmptyStar.jpg"  
+            $scope.UpdateNumOfFavorite($window.sessionStorage.getItem("Username"));                     
             } ,
             function myError(response) { 
              alert(response.data);
@@ -165,7 +225,9 @@ angular.module("myApp")
                 $scope.numberFavorite=$scope.numberFavorite+1;
                 document.getElementById("numbernoti").innerHTML = $scope.numberFavorite;  
                 $scope.updateFavorite(); 
-                $scope.Res = "favorite.jpg";            
+                $scope.updateLastFavorite();
+                $scope.Res = "favorite.jpg"; 
+                $scope.UpdateNumOfFavorite($window.sessionStorage.getItem("Username"));           
             } ,
                         function myError(response) { 
                                                    });
@@ -174,22 +236,19 @@ angular.module("myApp")
    }
 
 
-   $scope.updateFavorite =  function()
-    {
-        $http({method : "GET",
-        url : "http://localhost:3000/private/getAllFavoritePoi/"+$window.sessionStorage.getItem("Username") , 
-        headers : {
-        "Authorization" : $window.sessionStorage.getItem("Token")
-        }
-        }).then(function mySuccess(response) {
-            for(i=0 ; i<Object.keys(response.data).length ; i++)
-                self.favorite[i]   =  response.data[i].POI_ID;
-          
-        } ,
-        function myError(response) { 
-        });
-    }
-
+   $scope.UpdateNumOfFavorite = function()
+   {
+       $http({method : "GET",
+       url : "http://localhost:3000/private/getFavoritesCount/"+$window.sessionStorage.getItem("Username") , 
+       headers : {
+       "Authorization" : $window.sessionStorage.getItem("Token")
+       }
+       }).then(function mySuccess(response) {
+           document.getElementById("numbernoti").innerHTML = response.data.length;
+       } ,
+       function myError(response) {
+       });
+   }
 
     $scope.Refresh = function()
     {
@@ -213,6 +272,60 @@ angular.module("myApp")
                 self.favorite[i]   =  response.data[i].POI_ID;
         } ,
         function myError(response) { 
+        });
+    }
+
+
+    $scope.updateLastFavorite =  function()
+    {
+        self.show = new Array();
+        $http({method : "GET",
+        url : "http://localhost:3000/private/getLastFavoritePOI/"+$window.sessionStorage.getItem("Username") , 
+        headers : {
+        "Authorization" : $window.sessionStorage.getItem("Token")
+        }
+        }).then(function mySuccess(response) {
+            var count=0;
+            self.LastSaves = response.data;
+            if(response.data.length == undefined)
+            {
+                $scope.NumLastFavorite = false;
+            }
+            else
+            {
+                $scope.NumLastFavorite = true;
+            }
+    
+            if($scope.NumLastFavorite)
+            {
+            $http({method : "GET",
+            url : "http://localhost:3000/getAllPOI", 
+            headers : {
+            "Authorization" : $window.sessionStorage.getItem("Token")
+            }
+            }).then(function mySuccess(response) {
+                $scope.numberFavorite= response.data.length;
+                
+                for(j=0 ; j<Object.keys(self.LastSaves).length ; j++)
+                {
+                    for(i=0 ; i<Object.keys(response.data).length ; i++)
+                        if(self.LastSaves[j].POI_ID == response.data[i].ID && count!=2)
+                        {
+                            self.show[j] = response.data[i];
+                            count++;
+                        }
+                                  
+                            
+                }
+            } ,
+            function myError(response) {
+                alert(response.data) 
+            });
+        }
+    
+        } ,
+        function myError(response) {
+            alert(response.data) 
         });
     }
 

@@ -4,27 +4,28 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
+<link href="/css/mainlog.css" rel="stylesheet">
 
 <div class="container" >
 	<br>
 	<div class="row">
 		<div class="col">
 		</div>
-		
-		<aside class="col-sm-4">
-			<div class="card" style=" opacity: 0.85;">
+		<h1 id="header_main"> <b>Welcome To Barcelona</b></h1>		
+		<aside id="card_main" class="col-sm-4">
+			<div class="card" style="opacity: 0.83">
 				<article class="card-body">
 					<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
-					<hr>
-					<p class="text-success text-center">...</p>
-					<form>
+					<form name="loginform">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 								</div>
-								<input name="" class="form-control" placeholder="Username" type="text" ng-model="username">
+								<input name="" class="form-control" placeholder="Username" type="text" ng-model="username" required>
 							</div> <!-- input-group.// -->
 						</div> <!-- form-group// -->
 						<div class="form-group">
@@ -32,11 +33,11 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 								</div>
-								<input class="form-control" placeholder="******" type="password" ng-model="password">
+								<input class="form-control" placeholder="******" type="password" ng-model="password" required>
 							</div> <!-- input-group.// -->
 						</div> <!-- form-group// -->
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block" ng-click="LogIn()"> Login  </button>
+							<button type="submit" class="btn btn-primary btn-block" ng-click="loginform.$valid && LogIn()"> Login  </button>
 						</div> <!-- form-group// -->
 						<div class="form-group" >
 							<a href="#!register">
@@ -51,11 +52,66 @@
 
 		<div class="col">
 		</div>
+
 	</div> <!-- row.// -->	
 </div> 
 
 <div class="container"> <!-- Alonsooo here you can put the 3 pois.// -->	
-		<br> <center><div style="border:2px solid black;height:1px;width:600px;"></div></center><br />
+
+	<div class = "content"> 
+			
+			<div class="row" >  
+				<div ng-repeat=" pic in favorite" >
+					<div id = "images_login"class="images">
+							<img class = "image" id="test" ng-click="ImgClick(pic)"  ng-src="{{ pic.Picture }}" alt="Snow" style="width:100%">
+							<p class="description"> {{ pic.Name }} </p>
+					</div> 
+				</div>
+			</div>
+	</div>
+
 </div>
+
+
+
+<div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+        <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <figure>
+        <span class="modal-name" ng-model="title"> {{title}}</span>
+                <img class = "modalFavorite" ng-show="isConecting" ng-model="Res"  id="favoriteImage" ng-click="ClickFavorite1()"  ng-src= " {{ Res }} " alt="Snow" > 
+        <div> 
+                        <p class="modal-information" ng-model="users" ><b>Number of waching:</b> {{users}}</p>
+                        <p class="modal-information" ng-model="desc"><b>description:</b>{{desc}}</p>
+                        <p class="modal-information" ng-model="rank"><b>Rank:</b>  {{rank}}</p>
+                        <p class="modal-information" ><b>Review:</b></p>
+                                <table ng-show = "tableVis">
+                                        <tr>
+                                        <th>Date</th>
+                                        <th>Review</th>
+                                        <th>Rank</th>                      
+                                        </tr>
+                                        <tr ng-repeat=" review in reviews">
+                                        <td>{{ review.Date }}</td>
+                                        <td>{{ review.Review }}</td>
+                                        <td>
+                                                <a class="Star" ng-show=" {{ review.Rank }} == 5 "  title="Give 5 stars" style="color: orange">☆☆☆☆☆</a>
+                                                <a class="Star" ng-show=" {{ review.Rank }} == 4 "  title="Give 4 stars" style="color: orange">☆☆☆☆</a>
+                                                <a class="Star" ng-show=" {{ review.Rank }} == 3 "  title="Give 3 stars" style="color: orange">☆☆☆</a>
+                                                <a class="Star" ng-show=" {{ review.Rank }} == 2 "  title="Give 2 stars " style="color: orange">☆☆</a>
+                                                <a class="Star" ng-show=" {{ review.Rank }} == 1 "  title="Give 1 star" style="color: orange">☆</a>
+                                        </td>
+
+                                        </tr>
+                                </table>
+                        
+                        <p class="modal-information" ng-show = "!tableVis" ng-model="rank"><b>There is no Review!</b></p>
+
+        </div>
+        </figure>
+        </div>
+        </div>
+        </div>
 
 <!--container end.//-->

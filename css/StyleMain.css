@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Dancing+Script');
+
 /* Split the screen in half */
 .split {
   height: 100%;
@@ -10,13 +12,13 @@
 /* Control the left side */
 .left {
   left: 0;
-  background-color: rgb(169, 224, 187);
+  background-color: rgb(212, 230, 241);
 }
 
 /* Control the right side */
 .right {
   right: 0;
-  background-color: rgb(248, 241, 241);
+  background-color: rgb(155, 194, 229);
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -78,11 +80,21 @@ h1 { color: black;
   left: 10%;
 }
 
-#div-ngview{
-        background-image:url('/images/bg/barca-bg-02.jpg'); 
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
+#header_main_main_left
+{
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: bold;
+
+}
+#header_main_main_right
+{
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  left: 20px;
+  top: 15px;
+  float: left;
 }

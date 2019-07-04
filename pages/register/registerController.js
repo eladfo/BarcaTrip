@@ -20,7 +20,8 @@ angular.module("myApp")
     $scope.answer1;
     $scope.answer2;
     $scope.answer3;
-
+    $scope.questions = ["What is your dream car?", "Where do you want to retire?",
+                        "Who was your least favorite boss?", "What's your favorite security question?"]
 
     let serverUrl = "http://localhost:3000/";
     
@@ -44,6 +45,21 @@ angular.module("myApp")
 
     $scope.Register = function() 
    {
+
+        $scope.categories.forEach(function(item)
+        {
+            if($scope.catg1 == item.Name){
+                $scope.catg1 = item.ID;
+            }
+        });
+
+        $scope.categories.forEach(function(item)
+        {
+            if($scope.catg2 == item.Name){
+                $scope.catg2 = item.ID;
+            }
+        });
+
         let regJsn = {
             "Username":$scope.user,
             "Password":$scope.pass,

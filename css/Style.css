@@ -1,10 +1,10 @@
+
 #menu {
     font-weight: bold;
     color: white;
-    background-color: #00ad5f;
+    background-color: #5199f8;
     font-size: 14px;
     font-family: Tahoma, Geneva, sans-serif;
-    font-weight: bold;
     width: 100%;
 }
 #LogOutlbl  
@@ -27,7 +27,6 @@
     margin: 0;
     list-style: none;
     padding: 0px;
-    height: auto;
 }
 
 #menu li {
@@ -44,7 +43,7 @@
 }
 
 #menu a:hover {
-    background-color: #69d3a3;
+    background-color: #4685d8;
     color: #FFF;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -53,7 +52,6 @@
 }
 
 #menu li .active {
-    background-color: #69d3a3;
     color: #FFF;
     border-radius: 20px;
     -webkit-border-radius: 20px;

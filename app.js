@@ -16,7 +16,11 @@ app.config(function($routeProvider)  {
             templateUrl: 'pages/about/about.html',
             controller : 'aboutController as abtCtrl'
         })
-        // poi
+        // poi 
+        .when('/Map', {
+            templateUrl: 'pages/Map/Map.html',
+            controller : 'MapController as mapCtrl'
+        })
         .when('/poi', {
             templateUrl: 'pages/poi/poi.html',
             controller : 'poiController as poiCtrl'

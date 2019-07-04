@@ -1,15 +1,31 @@
 // about controller
 angular.module("myApp")
 .controller("aboutController", function ($scope) {
-    // button click count
-    $scope.btnCount = 0;
-    self.cities = {
-        1: {name:"Paris", state: "France", image: "https://media-cdn.tripadvisor.com/media/photo-s/0d/f5/7c/f2/eiffel-tower-priority.jpg"},
-        2: {name:"Jerusalem", state: "Israel", image: "https://cdni.rt.com/files/2017.12/article/5a3fe04efc7e93cd698b4567.jpg"},
-        3: {name:"London", state: "England", image: "http://www.ukguide.co.il/Photos/England/London/British-Royal-Tour.jpg"}
-    }
+     $scope.slideIndex = 1;
+     var i;
+     var x = document.getElementsByClassName("mySlides");
+     if (1 > x.length) {$scope.slideIndex = 1}
+     if (1 < 1) {$scope.slideIndex = x.length}
+     for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+     }
+     x[$scope.slideIndex-1].style.display = "block";  
 
-    $scope.myFunc = function() {
-        $scope.btnCount++;
-    }
+
+ $scope.plusDivs = function(n) {
+  $scope.showDivs($scope.slideIndex += n);
+}
+
+ $scope.showDivs = function(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {$scope.slideIndex = 1}
+  if (n < 1) {$scope.slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[$scope.slideIndex-1].style.display = "block";  
+}
+
+
 });
