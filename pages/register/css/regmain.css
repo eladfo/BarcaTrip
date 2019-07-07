@@ -688,12 +688,19 @@ input {
    #TITLE
    ========================================================================== */
 .title {
-  font-size: 24px;
-  text-transform: uppercase;
+  font-size: 32px;
+  font-family: 'Dancing Script', cursive;
   font-weight: 700;
   text-align: center;
   color: #fff;
 }
+
+.must_fill {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-style: italic;
+ }
 
 /* ==========================================================================
    #CARD
@@ -713,11 +720,12 @@ input {
   -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  opacity: 0.85;
 }
 
 .card-5 .card-heading {
   padding: 20px 0;
-  background: rgb(108, 189, 108);
+  background: #5199f8;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;
