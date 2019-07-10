@@ -4,20 +4,15 @@
     <link href="/pages/register/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href="/pages/register/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <!-- <link href="/pages/register/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
 
     <!-- Main CSS-->
     <link href="/pages/register/css/regmain.css" rel="stylesheet" media="all">
 
-
-    <script src="/pages/register/vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="/pages/register/vendor/jquery/jquery.min.js"></script>
     <script src="/pages/register/vendor/select2/select2.min.js"></script>
-    <script src="/pages/register/js/global.js"></script>
+    <script src="/pages/register/js/global.js"></script> -->
     
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <div class="page-wrapper p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -26,39 +21,47 @@
                 </div>
                 <div class="card-body">
                     <p class="must_fill">You must fill in fields with the * symbol beside them</p> <br><br>
-                    <form name="formi" method="POST" required>
+                    <form name="signup_form" method="POST">
                         <div class="form-row">
                             <div class="name">Username *</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="user" ng-model="user" required>
+                                    <input class="form-control" type="text" name="user" ng-model="user" ng-minlength="3" ng-maxlength="8"  pattern="[a-zA-Z]+" required>
                                 </div>
+                                <p class="inputError" ng-show="signup_form.user.$touched && signup_form.user.$invalid">
+                                    -- Username must contain letters only and length between 3 to 8 --
+                                </p>
                             </div>
+                           
                         </div>
 
                         <div class="form-row">
                             <div class="name">Password *</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="pass" ng-model="pass" required>
+                                    <input class="form-control" type="text" name="pass" ng-model="pass" ng-minlength="5" 
+                                            ng-maxlength="10" pattern="[A-Za-z0-9]+" required>
                                 </div>
+                                <p class="inputError" ng-show="signup_form.pass.$touched && signup_form.pass.$invalid">
+                                    -- Password must contain letters or numbers only and length between 5 to 10 --
+                                </p>
                             </div>
                         </div>
 
                         <div class="form-row">
-                            <div class="name">First Name</div>
+                            <div class="name">First Name *</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="city" ng-model="firstname">
+                                    <input class="form-control" type="text" name="city" ng-model="firstname" required>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-row" >
-                            <div class="name">Last Name</div>
+                            <div class="name">Last Name *</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="city" ng-model="lastname">
+                                    <input class="form-control" type="text" name="city" ng-model="lastname" required>
                                 </div>
                             </div>
                         </div>
@@ -93,22 +96,23 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="name">Category1</div>
+                        <!-- <div class="form-row">
+                            <div class="name">Category1 *</div>
                             <div class="value">
-                                    <select class="custom-select" ng-model="catg1">
+                                    <select class="custom-select" ng-model="catg1" required>
                                         <option value="" disabled selected>Choose first category</option>
                                         <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
                                     </select>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-row">
-                            <div class="name">Category2</div>
+                            <div class="name">Categories *</div>
                             <div class="value">
-                                    <select class="custom-select" ng-model="catg2">
-                                        <option value="" disabled selected>Choose second category</option>
-                                        <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
+                                    <p class="inputError" style="color: black">
+                                            -- Hold Ctrl button for choosing multiple categories --
+                                        </p>
+                                    <select class="custom-select" ng-model="catgs" ng-options="item.Name for item in categories" multiple required>
                                     </select>
                             </div>
                         </div>
@@ -170,7 +174,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <button class="btn btn-primary" type="submit" ng-click="formi.$valid && Register()">Register</button>
+                        <button class="btn btn-primary" type="submit" ng-click="signup_form.$valid && Register()">Register</button>
                     </form>
                 </div>
             </div>

@@ -3,11 +3,6 @@ angular.module("myApp")
 .controller("forgotController", function ($scope, $http, $window) {
     
     let serverUrl = "http://localhost:3000/";
-  
-    $scope.user;
-    $scope.q;
-    $scope.ans;
-    $scope.pass;
 
     $scope.questions = ["What is your dream car?", "Where do you want to retire?",
                         "Who was your least favorite boss?", "What's your favorite security question?"]

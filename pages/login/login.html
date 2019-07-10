@@ -15,40 +15,42 @@
 		<div class="col">
 		</div>
 		<h1 id="header_main"> <b>Welcome To Barcelona</b></h1>		
-		<aside id="card_main" class="col-sm-4">
-			<div class="card" style="opacity: 0.85">
-				<article class="card-body">
-					<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
-					<form name="loginform">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text"> <i class="fa fa-user"></i> </span>
-								</div>
-								<input name="" class="form-control" placeholder="Username" type="text" ng-model="username" required>
-							</div> <!-- input-group.// -->
-						</div> <!-- form-group// -->
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-								</div>
-								<input class="form-control" placeholder="******" type="password" ng-model="password" required>
-							</div> <!-- input-group.// -->
-						</div> <!-- form-group// -->
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block" ng-click="loginform.$valid && LogIn()"> Login  </button>
-						</div> <!-- form-group// -->
-						<div class="form-group" >
-							<a href="#!register">
-								<center><button  type="submit" class="btn btn-outline-primary"> <i class="fas fa-user-plus"></i> Sign up  </button></center>
-							</a>
-						</div> 
-						<p class="text-center"><a href="#!forgot" class="btn">Forgot password?</a></p>
-					</form>
-				</article>
-			</div> <!-- card.// -->
-		</aside> <!-- col.// -->
+		<div class="col-sm-4">
+			<aside id="card_main">
+				<div class="card" style="opacity: 0.85">
+					<article class="card-body">
+						<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+						<form name="loginform">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+									</div>
+									<input name="" class="form-control" placeholder="Username" type="text" ng-model="username" required>
+								</div> <!-- input-group.// -->
+							</div> <!-- form-group// -->
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+									</div>
+									<input class="form-control" placeholder="******" type="password" ng-model="password" required>
+								</div> <!-- input-group.// -->
+							</div> <!-- form-group// -->
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block" ng-click="loginform.$valid && LogIn()"> Login  </button>
+							</div> <!-- form-group// -->
+							<div class="form-group" >
+								<a href="#!register">
+									<center><button  type="submit" class="btn btn-outline-primary"> <i class="fas fa-user-plus"></i> Sign up  </button></center>
+								</a>
+							</div> 
+							<p class="text-center"><a href="#!forgot" class="btn">Forgot password?</a></p>
+						</form>
+					</article>
+				</div> <!-- card.// -->
+			</aside> <!-- col.// -->
+		</div>
 
 		<div class="col">
 		</div>
@@ -57,9 +59,7 @@
 </div> 
 
 <div class="container"> <!-- Alonsooo here you can put the 3 pois.// -->	
-
 	<div class = "content"> 
-			
 			<div class="row" >  
 				<div ng-repeat=" pic in favorite" >
 					<div id = "images_login"class="images">

@@ -5,21 +5,6 @@ angular.module("myApp")
     
     $scope.countries;
     $scope.categories;
-    $scope.user;
-    $scope.pass;
-    $scope.firstname;
-    $scope.lastname;
-    $scope.city;
-    $scope.country;
-    $scope.email;
-    $scope.catg1;
-    $scope.catg2;
-    $scope.q1;
-    $scope.q2;
-    $scope.q3;
-    $scope.answer1;
-    $scope.answer2;
-    $scope.answer3;
     $scope.questions = ["What is your dream car?", "Where do you want to retire?",
                         "Who was your least favorite boss?", "What's your favorite security question?"]
 
@@ -41,23 +26,18 @@ angular.module("myApp")
     }, function (error) {
         alert("Something went wrong :/");
     });   
+
+    
     /************/
 
     $scope.Register = function() 
    {
+        var jsnCatgs = [];
 
-        $scope.categories.forEach(function(item)
+        $scope.catgs.forEach(function(item)
         {
-            if($scope.catg1 == item.Name){
-                $scope.catg1 = item.ID;
-            }
-        });
-
-        $scope.categories.forEach(function(item)
-        {
-            if($scope.catg2 == item.Name){
-                $scope.catg2 = item.ID;
-            }
+            jsnCatgs.push(item.ID);
+            
         });
 
         let regJsn = {
@@ -69,9 +49,11 @@ angular.module("myApp")
             "Country":$scope.country,
             "Email":$scope.email,
             "QA":[{"q":$scope.q1, "a":$scope.answer1},{"q":$scope.q2, "a":$scope.answer2},{"q":$scope.q3, "a":$scope.answer3}],
-            "Categories":[$scope.catg1, $scope.catg2]
+            "Categories": jsnCatgs
         };
         
+        console.log(regJsn);
+
         $http({
             method: 'POST',
             url: serverUrl + "signUp",
@@ -81,6 +63,7 @@ angular.module("myApp")
             $window.location.href = '#!main'
         }, function (error) {
             alert(error.data.err);
+            console.log(error);
         });     
    }   
 });

@@ -14,18 +14,27 @@ body, html
   position: relative;
   font-family: 'Dancing Script', cursive;
   font-size: 65px;
-  top: 20px;
+  top: 30px;
   left: 45%;
+  text-align: center;
+
 }
 
-#second_heder
+#second_header
 {
 	position: relative;
 	top: 50px;
 	text-align: center;
 	padding: 0 140px;
-	font-family: Comic Sans MS;
+	font-family: 'Comic Sans MS';
 }
+
+
+#youtube
+{
+	padding: 90 0 50 280;
+}
+
 .mySlides {display:none;}
 
 img{

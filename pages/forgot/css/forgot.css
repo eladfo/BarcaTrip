@@ -12,3 +12,9 @@ body, html
 .card{
    opacity: 0.85
 }
+
+#pass{
+   font-weight: bold;
+   font-size: 18px;
+   text-align: center;
+}
