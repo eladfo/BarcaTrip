@@ -49,19 +49,19 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="name">First Name *</div>
+                            <div class="name">First Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="city" ng-model="firstname" required>
+                                    <input class="form-control" type="text" name="city" ng-model="firstname">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-row" >
-                            <div class="name">Last Name *</div>
+                            <div class="name">Last Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="city" ng-model="lastname" required>
+                                    <input class="form-control" type="text" name="city" ng-model="lastname">
                                 </div>
                             </div>
                         </div>
@@ -96,17 +96,27 @@
                             </div>
                         </div>
 
-                        <!-- <div class="form-row">
+                        <div class="form-row">
                             <div class="name">Category1 *</div>
                             <div class="value">
                                     <select class="custom-select" ng-model="catg1" required>
-                                        <option value="" disabled selected>Choose first category</option>
+                                        <option value="" disabled selected>Choose a first category</option>
                                         <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
                                     </select>
                             </div>
-                        </div> -->
+                        </div>
 
                         <div class="form-row">
+                                <div class="name">Category2 *</div>
+                                <div class="value">
+                                        <select class="custom-select" ng-model="catg2" required>
+                                            <option value="" disabled selected>Choose a second category</option>
+                                            <option ng-repeat="item in categories" ng-value="item.Name">{{item.Name}}</option>
+                                        </select>
+                                </div>
+                        </div>
+
+                        <!-- <div class="form-row">
                             <div class="name">Categories *</div>
                             <div class="value">
                                     <p class="inputError" style="color: black">
@@ -115,7 +125,7 @@
                                     <select class="custom-select" ng-model="catgs" ng-options="item.Name for item in categories" multiple required>
                                     </select>
                             </div>
-                        </div>
+                        </div> -->
 
 
                         <div class="form-row">
@@ -138,9 +148,9 @@
                         </div>
                         
                         <div class="form-row">
-                                <div class="name">Question2</div>
+                                <div class="name">Question2 *</div>
                                 <div class="value">
-                                        <select class="custom-select" name="subject2" ng-model="q2">
+                                        <select class="custom-select" name="subject2" ng-model="q2" required>
                                                 <option value="" disabled selected>Choose a question</option>
                                                 <option ng-repeat="item in questions" ng-value="item">{{item}}</option>
                                         </select>
@@ -148,39 +158,20 @@
                         </div>
 
                         <div class="form-row">
-                                <div class="name">Answer2</div>
+                                <div class="name">Answer2 *</div>
                                 <div class="value">
                                     <div class="input-group">
-                                        <input class="form-control" type="text" name="answer" ng-model="answer2">
+                                        <input class="form-control" type="text" name="answer" ng-model="answer2" required>
                                     </div>
                                 </div>
                         </div>
 
-                        <div class="form-row">
-                                <div class="name">Question3</div>
-                                <div class="value">
-                                        <select class="custom-select" name="subject2" ng-model="q3">
-                                            <option value="" disabled selected>Choose a question</option>
-                                            <option ng-repeat="item in questions" ng-value="item">{{item}}</option>
-                                        </select>
-                                </div>
-                        </div>
-
-                        <div class="form-row">
-                                <div class="name">Answer3</div>
-                                <div class="value">
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" name="answer" ng-model="answer3">
-                                    </div>
-                                </div>
-                        </div>
                         <button class="btn btn-primary" type="submit" ng-click="signup_form.$valid && Register()">Register</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
  
 
 

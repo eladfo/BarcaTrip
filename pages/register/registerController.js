@@ -6,8 +6,12 @@ angular.module("myApp")
     $scope.countries;
     $scope.categories;
     $scope.questions = ["What is your dream car?", "Where do you want to retire?",
-                        "Who was your least favorite boss?", "What's your favorite security question?"]
+                        "Who was your least favorite boss?", "What's your favorite security question?"];
 
+
+    $scope.firstname = "";
+    $scope.lastname = "";
+                        
     let serverUrl = "http://localhost:3000/";
     
     /** Initialze page values */
@@ -30,15 +34,33 @@ angular.module("myApp")
     
     /************/
 
+
     $scope.Register = function() 
    {
-        var jsnCatgs = [];
+        // var jsnCatgs = [];
 
-        $scope.catgs.forEach(function(item)
-        {
-            jsnCatgs.push(item.ID);
+        // $scope.catgs.forEach(function(item)
+        // {
+        //     jsnCatgs.push(item.ID);
             
+        // });
+
+        $scope.categories.forEach(function(item)
+        {
+            if($scope.catg1 == item.Name){
+                $scope.catg1 = item.ID;   
+                return;
+            }     
         });
+
+        $scope.categories.forEach(function(item)
+        {
+            if($scope.catg2 == item.Name){
+                $scope.catg2 = item.ID;   
+                return;
+            }     
+        });
+
 
         let regJsn = {
             "Username":$scope.user,
@@ -48,11 +70,12 @@ angular.module("myApp")
             "City":$scope.city,
             "Country":$scope.country,
             "Email":$scope.email,
-            "QA":[{"q":$scope.q1, "a":$scope.answer1},{"q":$scope.q2, "a":$scope.answer2},{"q":$scope.q3, "a":$scope.answer3}],
-            "Categories": jsnCatgs
+            "QA":[{"q":$scope.q1, "a":$scope.answer1},{"q":$scope.q2, "a":$scope.answer2}],
+            "Categories":[$scope.catg1, $scope.catg2]
         };
         
         console.log(regJsn);
+
 
         $http({
             method: 'POST',
