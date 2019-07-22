@@ -6,7 +6,7 @@ angular.module("myApp")
     $scope.countries;
     $scope.categories;
     $scope.questions = ["What is your dream car?", "Where do you want to retire?",
-                        "Who was your least favorite boss?", "What's your favorite security question?"];
+                        "Who was your least favorite boss?", "What is your favorite security question?"];
 
 
     $scope.firstname = "";
@@ -32,9 +32,6 @@ angular.module("myApp")
     });   
 
     
-    /************/
-
-
     $scope.Register = function() 
    {
         // var jsnCatgs = [];
@@ -83,7 +80,7 @@ angular.module("myApp")
             data: regJsn
         }).then(function (success) {
             alert(success.data.err)
-            $window.location.href = '#!main'
+            $window.location.href = '#!'
         }, function (error) {
             alert(error.data.err);
             console.log(error);
