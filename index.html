@@ -4,20 +4,16 @@
     </head>
     <body ng-app="myApp">
         <!-- load angular -->
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
         <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
 
-    
         <!-- load css -->
         <link href="/css/StylePoi.css" rel="stylesheet">
         <link href="/css/Style.css" rel="stylesheet">
         <link href="/css/StyleFavorite.css" rel="stylesheet">
         <link href="/css/StyleMain.css" rel="stylesheet">
         
-
-
         <!-- load app -->
         <script src="app.js"></script>
 
@@ -30,12 +26,9 @@
         <script src="pages/register/registerController.js"></script>
         <script src="pages/forgot/forgotController.js"></script>
         <script src="pages/Map/MapController.js"></script>
-
-
-        
+       
         <!-- the website -->        
         <div id="menu">
-                
             <ul>
                 <label id="LogOutlbl">Hello guest</label>
                 <input id="LogOutbut" type="button"  id="LogOut" value="Log Out"  onclick="LogOut()">
@@ -54,5 +47,4 @@
        <!-- This section changes as the hashbang changes -->
         <div ng-view></div>
     </body>
-
 </html>
